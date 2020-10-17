@@ -42,17 +42,17 @@ function Home() {
                     rating={2} 
                 />
                 <Product 
-                    id="31232231"
-                    title='Fu sera e fu mattina' 
-                    price={10.00} 
+                    id="31232233331"
+                    title='Fu sera e fu mattina (2)' 
+                    price={12.00} 
                     image='https://images-na.ssl-images-amazon.com/images/I/41CefBag0OL._SX323_BO1,204,203,200_.jpg' 
-                    rating={5} 
+                    rating={3} 
                 />
             </div>
 
             <div className="home__row">
                 <Product 
-                    id="312331231"
+                    id="312331234"
                     title='LG 29WK600 Monitor 29" UltraWide 21:9 LED IPS HDR, 2560x1080, AMD FreeSync 75Hz, Audio Stereo 10W, HDMI (HDCP 2.2), Display Port 1.2, Uscita Audio, Flicker Safe, Bianco' 
                     price={279.00} 
                     image='https://images-na.ssl-images-amazon.com/images/I/51Y%2BzyB4BPL._AC_SL1000_.jpg' 
