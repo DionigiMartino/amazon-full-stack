@@ -18,16 +18,37 @@
 
 .checkout__list {
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 350px;
-    background-color: #f3f3f3;
+    width: 400px;
     padding: 35px;
     margin-top: 2.5vh;
     align-items: center;
     justify-content: space-around;
 }
 
+.checkout__list_information {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5vw;
+}
+
+.checkout__list_information > p {
+    font-weight: bold;
+}
+
 .checkout__list > img {
-    width: 100%;
+    width: 150px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.checkout__list_rating {
+    display: flex;
+}
+
+.checkout__list_information > button {
+    background-color: #f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
 }
