@@ -10,17 +10,7 @@ import Subtotal from './Subtotal'
 function Checkout() {
     const [{basket}] = useStateValue();
 
-    let ProductList = basket?.map((product, id) => {
-        return (
-            <CheckoutProduct 
-                image={product.image}
-                title={product.title}
-                rating={product.rating}
-                price={product.price}
-                key={id}
-            />
-        )
-    })
+    // let ProductList = 
 
     return (
         <div className="checkout">
@@ -29,7 +19,18 @@ function Checkout() {
 
                 <div>
                     <h2 className="checkout__title">Your shopping basket</h2>
-                    {ProductList}
+                    {basket?.map((product, id) => {
+                        return (
+                            <CheckoutProduct 
+                                image={product.image}
+                                title={product.title}
+                                rating={product.rating}
+                                price={product.price}
+                                key={id}
+                                id={id}
+                            />
+                        )
+                    })}
                 </div>
             </div>
 
