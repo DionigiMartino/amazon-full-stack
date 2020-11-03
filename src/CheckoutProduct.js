@@ -4,6 +4,7 @@ import { useStateValue } from './StateProvider'
 
 
 function CheckoutProduct({id, image, title, price, rating}) {
+    // eslint-disable-next-line
     const [{basket}, dispatch] = useStateValue();
 
     const removeFromBasket = () => {
@@ -13,8 +14,6 @@ function CheckoutProduct({id, image, title, price, rating}) {
             // the type of dispatch from the id
             id: id
         })
-
-        console.log(basket)
     }
 
     return (
@@ -25,7 +24,7 @@ function CheckoutProduct({id, image, title, price, rating}) {
                 <p>€ {price}</p>
                 <div className="checkout__list_rating">
                     {Array(rating).fill().map((_, i) => (
-                        <p>*</p>
+                        <p key={i}>*</p>
                     ))}
                 </div>
 

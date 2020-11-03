@@ -15,6 +15,7 @@ export const getBasketList = basket => {
 }
 
 const reducer = (state, action) => {
+    console.log(action)
     switch(action.type){
         case 'ADD_TO_BASKET':
             return {
@@ -27,6 +28,7 @@ const reducer = (state, action) => {
             const index = state.basket.findIndex(
                 (basketItem) => basketItem.id === action.id
             );
+
             /*
                 Taking the index from the basket, 
                 looking if the basketItem.id match the

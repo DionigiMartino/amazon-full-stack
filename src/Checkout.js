@@ -19,6 +19,13 @@ function Checkout() {
 
                 <div>
                     <h2 className="checkout__title">Your shopping basket</h2>
+                    {/* 
+                        Taking the items from the basket
+                        using map, adding the ? operator,
+                        which prevent the apps from crashing
+                        if there aren't any items in the basket
+                    */}
+                    
                     {basket?.map((product, id) => {
                         return (
                             <CheckoutProduct 
@@ -27,7 +34,7 @@ function Checkout() {
                                 rating={product.rating}
                                 price={product.price}
                                 key={id}
-                                id={id}
+                                id={product.id}
                             />
                         )
                     })}
