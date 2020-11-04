@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 
 // import header
@@ -21,7 +21,42 @@ import Checkout from './Checkout'
 
 import Login from './Login'
 
+// import Auth
+
+import {auth} from './firebase'
+
+// import the dispatch and the stateValue 
+
+import { useStateValue } from './StateProvider';
+
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    // it will start only once, when the app component loads
+
+    auth.onAuthStateChanged(authUser => {
+      console.log('USER >>>', authUser)
+
+      if(authUser){
+        // if the user just logged in / the user was logged in
+        dispatch({
+          type: 'SET_USER',
+          user: authUser
+        })
+      } else {
+        // the user is logged out
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+
+    // onAuthStateChanged, it'll control any change provided from the
+    // auth
+  }, [])
+
   return (
     <Router>
       <div className="App">

@@ -1,7 +1,8 @@
 // Created the basket Array
 
 export const initialState = {
-    basket: []
+    basket: [],
+    user: null
 };
 
 // Selector
@@ -51,6 +52,11 @@ const reducer = (state, action) => {
                 // Making the old basket merging with the new one
                 basket: newBasket
             };
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
+            }
         default:
             return state;
     }
